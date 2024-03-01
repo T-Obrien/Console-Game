@@ -8,7 +8,7 @@ using UnityEngine.InputSystem.DualShock;
 using UnityEngine.PS4;
 #endif
 
-public class TestMove : MonoBehaviour
+public class WizMove : MonoBehaviour
 {
     
     //private Transform tr;
@@ -22,9 +22,8 @@ public class TestMove : MonoBehaviour
     void Update()
     {
         //var gamepad = (DualShockGamepad)Gamepad.all[0];
-        //gamepad.SetLightBarColor(Color.blue);
 
-        //bool pressed = Input.GetButtonDown("Fire1");
+        bool pressed = Input.GetButtonDown("Fire1");
         //if (pressed)
         //{
         //    gamepad.SetLightBarColor(Color.red);
@@ -34,16 +33,18 @@ public class TestMove : MonoBehaviour
         //{
         //    gamepad.SetLightBarColor(Color.cyan);
         //}
-
+        
         float xdirection = Input.GetAxis("Vertical");
         float zdirection = Input.GetAxis("Horizontal");
 
         //tr = this.GetComponent<Transform>();
         xdirection *= Time.deltaTime;
         zdirection *= Time.deltaTime;
-        transform.Translate(4 * xdirection, 0, 0);
+        transform.Translate(0, 0, 4 * xdirection);
         transform.Rotate(0, - 50 * zdirection, 0);
         
         Debug.Log(xdirection);
+        
+        //Debug.Log(xdirection);
     }
 }
