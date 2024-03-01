@@ -40,7 +40,9 @@ public class TestMove : MonoBehaviour
         //tr = this.GetComponent<Transform>();
         xdirection *= Time.deltaTime;
         zdirection *= Time.deltaTime;
-        transform.Translate(5 * xdirection, 0, 5 * zdirection);
-        //Debug.Log(direction);
+        transform.Translate(4 * xdirection, 0, 0);
+        transform.Rotate(0, - 50 * zdirection, 0);
+        
+        Debug.Log(xdirection);
     }
 }
